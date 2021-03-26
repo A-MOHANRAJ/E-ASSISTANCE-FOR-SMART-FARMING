@@ -1,0 +1,61 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master_Layout_Farmer.master.cs" Inherits="Onliine_Agro_Products_System.Master_Layout_Farmer" %>
+
+<%@ Register Src="~/Login.ascx" TagPrefix="UC_Login" TagName="Login" %>
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Farmer Services</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div id="container">
+                <div id="banner">
+                    <h1>Online Farming Assistance</h1>
+                    <p class="slogan">way to smart</p>
+                </div>
+                <div id="navbar">
+                    <ul>
+                        <li><a href="Home.aspx">Home</a></li>
+                        <li><a href="FarmerProducts.aspx">Farmers</a></li>
+                        <li><a href="DealerPosts.aspx">Dealers</a></li>
+                        <li><a href="ViewTips.aspx">Farming Tips</a></li>
+                        <li><a href="DailyPrice.aspx">Daily Price</a></li>
+
+                    </ul>
+                </div>
+                <div>
+                    <UC_Login:Login ID="UcLogin" runat="server" />
+
+                </div>
+                <%-- <div class="clear">&nbsp;</div>--%>
+                <div id="sidebar">
+                    <h2>Dashboard</h2>
+                    <ul>
+                        <li><a href="FarmerDashboard.aspx">My Dashboard</a></li>
+                        <li><a href="SellProduct.aspx">Sell Product</a></li>
+                        <li><a href="FarmerTransaction.aspx" class="selected">My Product Transactions</a></li>
+                        <li><a href="FarmerApprovals.aspx">Product Approvals</a></li>
+                        <li><a href="FarmerRequests.aspx">My Requests</a></li>
+                        <li><a href="FarmerProfile.aspx?mode=predit" class="selected">My Profile</a></li>
+
+                        <li><a href="FarmerDashboard.aspx?mode=chpass">Change Password</a></li>
+
+                    </ul>
+                </div>
+                <div id="content">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <div class="clear">&nbsp;</div>
+
+            </div>
+        </div>
+    </form>
+</body>
+</html>
